@@ -123,12 +123,13 @@
 			status = "okay";
         };
 	 };
- 
+	 /*
 	 adau1860: adau1860@64 {
 		 compatible = "analog,adau1860";
 		 reg = <0x64>;
 		 enable-gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
 	 };
+	 */
  };
  
  &i2c2 {
@@ -140,6 +141,12 @@
 	 clock-frequency = <I2C_BITRATE_FAST>;  // 400 kHz
 	 zephyr,concat-buf-size = <512>;
      zephyr,flash-buf-max-size = <512>;
+
+	 adau1860: adau1860@64 {
+		 compatible = "analog,adau1860";
+		 reg = <0x64>;
+		 enable-gpios = <&gpio0 4 GPIO_ACTIVE_HIGH>;
+	 };
 
 	maxm86161: maxm86161@62 {
         compatible = "i2c-device";
